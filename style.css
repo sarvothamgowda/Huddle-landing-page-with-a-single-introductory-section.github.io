@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+/*     font-family: 'Open Sans', sans-serif;
+
+font-family: 'Poppins', sans-serif; */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(./images/bg-desktop.svg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color: hsl(257, 40%, 49%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1440px;
+    min-height: 800px;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 
+    "hd hd hd hd hd hd hd hd hd hd hd hd"
+    "mn mn mn mn mn mn mn mn mn mn mn mn"
+    "ft ft ft ft ft ft ft ft ft ft ft ft";
+}
+
+.header {
+    grid-area: hd;
+    display: flex;
+    justify-content: center;
+    grid-column: 2/4; 
+}
+
+.main {
+    grid-area: mn;
+    grid-column: 2/12;
+    display: flex;
+    justify-content: center;
+}
+
+picture img {
+    max-width: 100%;
+    height: auto;
+}
+
+article {
+    max-width: 500px;
+    margin: 1rem;
+}
+
+.intro h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
+
+.intro p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: white;
+    line-height: 1.5;
+    padding: 1rem 2rem;
+}
+
+button {
+    background-color: white;
+    padding: 1rem 4rem;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 10px rgb(0, 0, 0, 0.2);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: hsl(257, 40%, 49%);
+    margin: 1rem 2rem;
+}
+
+.social {
+    grid-area: ft;
+    display: flex;
+    justify-items: end;
+    align-items: center;
+    grid-column: 10 / 12;
+    color: white;
+} 
+
+i {
+    padding: 0.75rem;
+    border: 2px solid white;
+    border-radius: 50px;
+}
+
+i:hover {
+    border: 2px solid hsl(300, 69%, 71%);
+    background-color: transparent;
+    color: hsl(300, 69%, 71%);
+}
+
+@media screen and (max-width: 900px) {
+
+    body {
+        background: hsl(257, 40%, 49%) url(./images/bg-mobile.svg) no-repeat;
+        background-size: cover;
+    }
+
+    .container {
+        margin: 1rem;
+        max-width: 400px;
+        display: grid;
+        place-content: center;
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "hd"
+        "mn"
+        "ft";
+    }
+
+    .header {
+        grid-column: none;
+        justify-content: left;
+    }
+
+    .logo {
+        max-width: 200px;
+        padding: 2rem 0;
+    }
+
+     .main {
+        max-width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        grid-column: none;
+     }
+
+     article {
+        max-width: 400px;
+    }
+
+    .intro h1, .intro p{
+        padding: 1rem 0 1rem;
+        text-align: center;
+    }
+    
+    .social {
+        justify-content: center;
+        align-items: center;
+        grid-column: none;
+    }
+
+    .intro button {
+        max-width: 100%;
+        margin: 2rem 5rem;
+    }
+}
